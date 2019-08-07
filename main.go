@@ -76,6 +76,7 @@ func RunServer() {
 	logPrintf("Running the server\n")
 	mux := http.NewServeMux()
 	mux.HandleFunc("/demo/hello", HelloServer)
+	mux.HandleFunc("/demo/hello2", HelloServer)
 	mux.HandleFunc("/demo/person", PersonServer)
 	mux.HandleFunc("/demo/random-error", RandomErrorServer)
 	mux.Handle("/metrics", prometheusHandler())
